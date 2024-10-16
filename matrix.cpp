@@ -1,7 +1,14 @@
 #include<iosream>
 #include "matrix.hpp"
 int** createmtx(size_t m,size_t n);
-void delmtx(int** t, size_t m, size_t n);
+void delmtx(int** t, size_t m, size_t n)
+{
+	for(size_t i{0};i<0;++i)
+{
+	delete[]t[i];
+}
+	delete[]t;
+};
 void inputmtx(int** t,size_t m, size_t n)
 {
 	for(size_t i{0};i<m;++i)
@@ -25,4 +32,4 @@ void outputmtx(const int*const* t,size_t m, size_t n)
 	std::cout << "\n";
 }
 
-}
+};
