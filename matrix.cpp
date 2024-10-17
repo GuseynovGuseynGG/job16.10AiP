@@ -35,8 +35,8 @@ void inputmtx(int **t,size_t m, size_t n)
 {
       std::cin >> t[i][j];
 }
-}
-
+};
+  std::cout << "\n";
 };
 void outputmtx(const int *const *t,size_t m, size_t n)
 {
