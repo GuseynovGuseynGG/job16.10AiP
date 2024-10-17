@@ -9,7 +9,6 @@ int main()
 {
     return 1;
 };
-  std::cout << "\n";
   int **arr=nullptr;
   try
 {
