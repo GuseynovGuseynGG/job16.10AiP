@@ -3,23 +3,30 @@
 
 int main()
 {
-  size_t M=0,N=0;
-  std::cin >> M >> N;
+  size_t m = 0,n = 0;
+  std::cin >> m >> n;
   if(!std::cin)
-{
+  {
     return 1;
-};
-  int **arr=nullptr;
+  };
+  Matrix arr(m, n);
   try
-{
-    arr=createmtx(M,N);
-}
+  {
+    arr.inputmtx();
+  }
   catch(const std::bad_alloc & e)
-{
-    std::cerr << "Out of memory\n";
+  {
+    std::cerr << "Error with first matrix\n";
     return 1;
-};
-  inputmtx(arr,M,N);
-  outputmtx(arr,M,N);
-  delmtx(arr,N);
+  };
+  arr.outputmtx();
+  std::cin >> m >> n;
+  if(!std::cin)
+  {
+    return 1;
+  };
+  arr.reSize(m, n);
+  arr.outputmtx();
+  Matrix arr2(arr);
+  arr2.outputmtx();
 }
